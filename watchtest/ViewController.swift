@@ -19,6 +19,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var closestToilet: UIButton!
     
+    @IBAction func tButton (sender: UIButton!) {
+        var ratingViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RatingView")
+        
+        self.presentViewController(ratingViewController as! UIViewController, animated: true, completion: nil)
+    }
+    
     var mapView: GMSMapView!
     
     var current: GMSCameraPosition!
@@ -107,7 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getServer() -> CLLocationCoordinate2D {
-        let url = NSURL(string: "http://localhost:3000/get")
+        let url = NSURL(string: "http://104.131.104.27:3000/")
         var finCoor: CLLocationCoordinate2D!
         
         let tasks = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
