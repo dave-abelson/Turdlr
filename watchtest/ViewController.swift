@@ -20,9 +20,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var closestToilet: UIButton!
     
     @IBAction func tButton (sender: UIButton!) {
-        var ratingViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RatingView")
+        var ratingViewController: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("RatingView")
         
-        self.presentViewController(ratingViewController as! UIViewController, animated: true, completion: nil)
+        self.presentViewController(ratingViewController as UIViewController, animated: true, completion: nil)
     }
     
     var mapView: GMSMapView!
