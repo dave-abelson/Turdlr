@@ -12,6 +12,14 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
+
+struct GlobalCoord {
+    static var globalLong:String = "";
+    static var globalLat:String = "";
+}
+
+let myStruct = GlobalCoord()
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
@@ -68,13 +76,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
     
         
+        
         println("TEST");
         super.viewDidLoad()
         locationManager.delegate = self
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        locationManager.distanceFilter = 4.0;
+        locationManager.distanceFilter = 1.0;
         
         locationManager.startMonitoringSignificantLocationChanges()
         
@@ -101,9 +110,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             println("location is \(latitude), \(long)")
             
-            current = GMSCameraPosition.cameraWithLatitude(latitude, longitude: long, zoom: 16)
+            GlobalCoord.globalLong = "\(thisLocation.coordinate.latitude)"
+            GlobalCoord.globalLat = "\(thisLocation.coordinate.longitude)"
+            
+            current = GMSCameraPosition.cameraWithLatitude(latitude, longitude: long, zoom: 20)
             
             mapView.camera = current
+            
+
+            //Only needs to be done once
+            locationMarker = GMSMarker(position: thisLocation.coordinate)
+            locationMarker.title = "shitdicks"
+            locationMarker.appearAnimation = kGMSMarkerAnimationPop
+            locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+            locationMarker.map = mapView;
+            
+            
             
             
         }
@@ -112,12 +134,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         if state == false{
         
-            //Returns coordinates
-            getServer();
+
             
             //Iterate through all objects
             if (globalJson != nil){
-                for (var i = 0; i < globalJson.count; i++){
+                for (var i = 0; i < 1; i++){
                     //Gets latitude and long
                     var latitude = globalJson[i]["lat"];
                     var longitude = globalJson[i]["lon"];
@@ -125,9 +146,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     println((latitude).doubleValue)
                     println(longitude.doubleValue)
                     
-                    let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-                    self.setupLocationMarker(coordinate);
+                    let coordinate = CLLocationCoordinate2DMake(latitude.doubleValue, longitude.doubleValue)
                     println("Coordinate placed!");
+                    
+                    //Places a marker on the top
+                        
+
+                
                     
 
                     
@@ -136,22 +161,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     }
                     state = true;
             }
-
+            
+            //Returns coordinates
+            getServer();
             
             
         }
         
     }
     
-    //Places a marker on the top
-    func setupLocationMarker(coordinate: CLLocationCoordinate2D) {
-        locationMarker = GMSMarker(position: coordinate)
-        locationMarker.map = mapView;
-        locationMarker.title = "shitdicks"
-        locationMarker.appearAnimation = kGMSMarkerAnimationPop
-        locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-        locationMarker.opacity = 0.75
-    }
+
     
     func getServer() {
         let url = NSURL(string: "http://104.131.104.27:3000/get")
