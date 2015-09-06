@@ -10,6 +10,8 @@
 	<string>watchtest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>5E196610CE478797AFB512DFEDFCAB96B717D506</key>
+		<string>https://github.com/dave-abelson/Turdlr</string>
 		<key>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</key>
 		<string>https://github.com/ggaabe/poopcircle.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>watchtest.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</key>
+		<key>5E196610CE478797AFB512DFEDFCAB96B717D506</key>
 		<string>..</string>
+		<key>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</key>
+		<string>../../poopcircle</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ggaabe/poopcircle.git</string>
+	<string>https://github.com/dave-abelson/Turdlr</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</string>
+	<string>5E196610CE478797AFB512DFEDFCAB96B717D506</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>poopcircle</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5E196610CE478797AFB512DFEDFCAB96B717D506</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Turdlr-master</string>
 		</dict>
 	</array>
 </dict>
