@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-V3-hIO">
-                                <rect key="frame" x="56" y="452" width="488" height="38"/>
+                                <rect key="frame" x="56" y="481" width="488" height="38"/>
                                 <color key="backgroundColor" red="0.85561385443601723" green="1" blue="0.85705732943340873" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                 <state key="normal" title="Best Toilet">
@@ -32,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-0l-i48">
-                                <rect key="frame" x="56" y="513" width="488" height="38"/>
+                                <rect key="frame" x="56" y="542" width="488" height="38"/>
                                 <color key="backgroundColor" red="0.85561385440000004" green="1" blue="0.85705732940000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                 <state key="normal" title="Closest Toilet">
@@ -67,7 +67,7 @@
                             <constraint firstItem="NDG-eF-mDV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="5" id="BPd-6r-xH0"/>
                             <constraint firstAttribute="bottom" secondItem="NDG-eF-mDV" secondAttribute="bottom" constant="20" symbolic="YES" id="IRT-Wb-eQg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NDG-eF-mDV" secondAttribute="bottom" constant="8" id="KOJ-b7-Gif"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DEn-0l-i48" secondAttribute="bottom" constant="49" id="L0v-fa-t4T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DEn-0l-i48" secondAttribute="bottom" constant="20" id="L0v-fa-t4T"/>
                             <constraint firstItem="NDG-eF-mDV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="394" id="NCk-Vd-3rn"/>
                             <constraint firstItem="NDG-eF-mDV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="500" id="NZ3-1w-p2Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NDG-eF-mDV" secondAttribute="trailing" constant="-5" id="OW0-vm-TBf"/>

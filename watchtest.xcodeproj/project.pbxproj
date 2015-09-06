@@ -10,14 +10,14 @@
 		59010642F6925396F819BA26 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 914824A3610D3AB75C7BAA02 /* libPods.a */; };
 		86583BA21B9A961400696138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583BA11B9A961400696138 /* AppDelegate.swift */; };
 		86583BA41B9A961400696138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583BA31B9A961400696138 /* ViewController.swift */; };
-		86583BA71B9A961400696138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86583BA51B9A961400696138 /* Main.storyboard */; };
 		86583BA91B9A961400696138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86583BA81B9A961400696138 /* Images.xcassets */; };
 		86583BAC1B9A961400696138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86583BAA1B9A961400696138 /* LaunchScreen.xib */; };
 		86583BB81B9A961400696138 /* watchtestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583BB71B9A961400696138 /* watchtestTests.swift */; };
 		86583BC21B9AAD1E00696138 /* poopcircle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86583BC11B9AAD1E00696138 /* poopcircle.storyboard */; };
 		DD190AE11B9BD3630020720B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD190AE01B9BD3630020720B /* SwiftyJSON.swift */; };
 		DD190AE31B9BE9540020720B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD190AE21B9BE9540020720B /* MapKit.framework */; };
-		E9BCB9981B9BCBD30067678D /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB9971B9BCBD30067678D /* RatingViewController.swift */; };
+		DD190AE51B9BFE510020720B /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD190AE41B9BFE510020720B /* RatingViewController.swift */; };
+		DD190AE71B9C01B30020720B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD190AE61B9C01B30020720B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 		86583BA01B9A961400696138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86583BA11B9A961400696138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86583BA31B9A961400696138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		86583BA61B9A961400696138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86583BA81B9A961400696138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86583BAB1B9A961400696138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		86583BB11B9A961400696138 /* watchtestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = watchtestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +46,8 @@
 		C5F480A4D784D57C96BA0283 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DD190AE01B9BD3630020720B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		DD190AE21B9BE9540020720B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		E9BCB9971B9BCBD30067678D /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		DD190AE41B9BFE510020720B /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		DD190AE61B9C01B30020720B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +112,11 @@
 		86583B9E1B9A961400696138 /* poopcircle */ = {
 			isa = PBXGroup;
 			children = (
+				DD190AE61B9C01B30020720B /* Main.storyboard */,
 				DD190AE01B9BD3630020720B /* SwiftyJSON.swift */,
+				DD190AE41B9BFE510020720B /* RatingViewController.swift */,
 				86583BA11B9A961400696138 /* AppDelegate.swift */,
 				86583BA31B9A961400696138 /* ViewController.swift */,
-				86583BA51B9A961400696138 /* Main.storyboard */,
-				E9BCB9971B9BCBD30067678D /* RatingViewController.swift */,
 				86583BA81B9A961400696138 /* Images.xcassets */,
 				86583BAA1B9A961400696138 /* LaunchScreen.xib */,
 				86583B9F1B9A961400696138 /* Supporting Files */,
@@ -233,9 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				86583BC21B9AAD1E00696138 /* poopcircle.storyboard in Resources */,
-				86583BA71B9A961400696138 /* Main.storyboard in Resources */,
 				86583BAC1B9A961400696138 /* LaunchScreen.xib in Resources */,
 				86583BA91B9A961400696138 /* Images.xcassets in Resources */,
+				DD190AE71B9C01B30020720B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9BCB9981B9BCBD30067678D /* RatingViewController.swift in Sources */,
 				86583BA41B9A961400696138 /* ViewController.swift in Sources */,
+				DD190AE51B9BFE510020720B /* RatingViewController.swift in Sources */,
 				86583BA21B9A961400696138 /* AppDelegate.swift in Sources */,
 				DD190AE11B9BD3630020720B /* SwiftyJSON.swift in Sources */,
 			);
@@ -312,14 +312,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		86583BA51B9A961400696138 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				86583BA61B9A961400696138 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		86583BAA1B9A961400696138 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
