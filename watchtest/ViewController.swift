@@ -33,6 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationMarker: GMSMarker!
     
+    var globalJson: JSON!
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status:
         CLAuthorizationStatus) {
         println("Location Method called")
@@ -93,11 +95,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         if state == false{
         
-            current = GMSCameraPosition.cameraWithLatitude(latitude, longitude: long, zoom: 16)
-
-            mapView.camera = current
+            //Returns coordinates
+            getServer();
             
-            state = true
+            //Iterate through all objects
+            if (globalJson != nil){
+                for (var i = 0; i < globalJson.count; i++){
+                    //Gets latitude and long
+                    var latitude = globalJson[i]["lat"];
+                    var longitude = globalJson[i]["lon"];
+                    
+                    println((latitude).doubleValue)
+                    println(longitude.doubleValue)
+                    
+                    let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+                    self.setupLocationMarker(coordinate);
+                    println("Coordinate placed!");
+                    
+                    current = GMSCameraPosition.cameraWithLatitude(coordinate.latitude, longitude: coordinate.longitude, zoom: 3)
+                    
+                    mapView.camera = current
+                    
+            
+                    
+                    }
+                    state = true;
+            }
+
+            
+            
         }
         
     }
@@ -112,52 +138,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationMarker.opacity = 0.75
     }
     
-    func getServer() -> CLLocationCoordinate2D {
-        let url = NSURL(string: "http://104.131.104.27:3000/")
+    func getServer() {
+        let url = NSURL(string: "http://104.131.104.27:3000/get")
         var finCoor: CLLocationCoordinate2D!
         
         let tasks = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            //println(NSString(data: data, encoding: NSUTF8StringEncoding))
-            let json = JSON(data: data)
-            if (json != nil) {
-                //Gets the latitude value of first json
-                var firstEle = json[0]["lat"]
-                
-                //Iterate through all objects
-                for (var i = 0; i < json.count; i++){
-                    //Gets latitude and long
-                    var latitude = json[i]["lat"];
-                    
-                    var longitude = json[i]["lon"];
-                    println((latitude).doubleValue)
-                    println(longitude.doubleValue)
-                    
-                    /* Deal with error handling later cause i'm fkins tupid
-                    if (((json[i]["lat"].string)) == nil){
-                    
-                    }
-                    if (((json[i]["lon"].string)) != nil){
-                    //Value of longitude is now defined
-                    }
-                    */
-                    //CLLocationDegrees
-                    let coordinate = CLLocationCoordinate2D(latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-                    finCoor = coordinate;
-                    //self.setupLocationMarker(coordinate);
-                    println("Coordinate placed!");
-                    
-                }
-                println("SwiftyJSON: \(firstEle)")
-            }
-            else{
-                println("swag swag");
-            }
-        }
-        if (finCoor != nil){
-            return finCoor
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            self.globalJson = JSON(data: data)
+            
         }
         tasks.resume()
-        return CLLocationCoordinate2D(latitude: 0, longitude: 0)
     }
     
     

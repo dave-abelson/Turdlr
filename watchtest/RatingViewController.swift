@@ -48,7 +48,7 @@ class RatingViewController: UIViewController {
     func connectServer(rate: Int) {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.104.27:3000/receive")!)
         request.HTTPMethod = "POST"
-        let postString = "lat=13&lon=15&rate=" + String(rate)
+        let postString = "lat="+String(rate)+"&lon="+String(rate)+"&rate=" + String(rate)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         print(postString)
@@ -71,6 +71,7 @@ class RatingViewController: UIViewController {
         var mainViewController: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("mainController")
         
         self.presentViewController(mainViewController as UIViewController, animated: true, completion: nil)
+        
     }
     
     
