@@ -23,6 +23,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         var ratingViewController: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("RatingView")
         
         self.presentViewController(ratingViewController as UIViewController, animated: true, completion: nil)
+        
+        updateMap();
     }
     
     var mapView: GMSMapView!
@@ -59,22 +61,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func updateMap(){
+        state = false;
+    }
+    
     override func viewDidLoad() {
     
+        
+        println("TEST");
         super.viewDidLoad()
         locationManager.delegate = self
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        
-        doAuthorizationChecks()
+        locationManager.distanceFilter = 4.0;
         
         locationManager.startMonitoringSignificantLocationChanges()
         
         locationManager.startUpdatingLocation()
         
-        state = false;
+        updateMap();
     
         mapView = GMSMapView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height/1.35))
         mapView.myLocationEnabled = true
@@ -87,12 +93,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         var latitude: CLLocationDegrees!
         var long: CLLocationDegrees!
         for thisLocation in locations{
+            
+            //get current location
+            var currents = manager.location
             latitude = thisLocation.coordinate.latitude
             long = thisLocation.coordinate.longitude
             
             println("location is \(latitude), \(long)")
             
+            current = GMSCameraPosition.cameraWithLatitude(latitude, longitude: long, zoom: 16)
+            
+            mapView.camera = current
+            
+            
         }
+        
+        
+        
         if state == false{
         
             //Returns coordinates
@@ -112,9 +129,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.setupLocationMarker(coordinate);
                     println("Coordinate placed!");
                     
-                    current = GMSCameraPosition.cameraWithLatitude(coordinate.latitude, longitude: coordinate.longitude, zoom: 3)
-                    
-                    mapView.camera = current
+
                     
             
                     

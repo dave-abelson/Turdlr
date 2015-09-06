@@ -70,6 +70,8 @@ class RatingViewController: UIViewController {
         
         var mainViewController: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("mainController")
         
+        
+        
         self.presentViewController(mainViewController as UIViewController, animated: true, completion: nil)
         
     }
