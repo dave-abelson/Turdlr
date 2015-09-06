@@ -45,6 +45,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var globalJson: JSON!
     
+    var delayCounter: Int = 0
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status:
         CLAuthorizationStatus) {
         println("Location Method called")
@@ -71,17 +73,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateMap(){
         state = false;
+        delayCounter = 1
     }
     
     override func viewDidLoad() {
     
-        
-        
-        println("TEST");
         super.viewDidLoad()
         locationManager.delegate = self
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         
         locationManager.distanceFilter = 1.0;
         
@@ -90,6 +90,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         updateMap();
+//        
+//        if (delayCounter > 1){
+//            println("ONCE")
+//            state = false;
+//        }else{
+//            println("TWICE")
+//            state = true;
+//        }
+        //state = true
+        
+        println("DELAY COUNTER \(delayCounter)")
     
         mapView = GMSMapView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height/1.35))
         mapView.myLocationEnabled = true
@@ -119,11 +130,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
 
             //Only needs to be done once
-            locationMarker = GMSMarker(position: thisLocation.coordinate)
-            locationMarker.title = "shitdicks"
-            locationMarker.appearAnimation = kGMSMarkerAnimationPop
-            locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-            locationMarker.map = mapView;
+            if state == false && delayCounter == 1{
+                println("shitdicks")
+                locationMarker = GMSMarker(position: thisLocation.coordinate)
+                locationMarker.title = "shitdicks"
+                locationMarker.appearAnimation = kGMSMarkerAnimationPop
+                locationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+                locationMarker.map = mapView;
+                
+                state = true
+            }
+            else {
+                delayCounter = 1
+            }
             
             
             
@@ -132,13 +151,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
-        if state == false{
+       // if state == false{
         
 
             
             //Iterate through all objects
             if (globalJson != nil){
                 for (var i = 0; i < 1; i++){
+                    println("HITS")
                     //Gets latitude and long
                     var latitude = globalJson[i]["lat"];
                     var longitude = globalJson[i]["lon"];
@@ -158,8 +178,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     
             
                     
-                    }
-                    state = true;
+                  //  }
+                    //state = true;
             }
             
             //Returns coordinates

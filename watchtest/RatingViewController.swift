@@ -17,7 +17,6 @@ class RatingViewController: UIViewController {
     
     @IBOutlet weak var button1: UIButton!
     
-    
 
     
     @IBAction func rateOne(sender: AnyObject) {
