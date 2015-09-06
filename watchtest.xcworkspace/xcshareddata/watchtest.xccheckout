@@ -10,14 +10,14 @@
 	<string>watchtest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EEBC8ED064A916ECF2456ED29F063FCB85B6C6F4</key>
+		<key>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</key>
 		<string>https://github.com/ggaabe/poopcircle.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>watchtest.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EEBC8ED064A916ECF2456ED29F063FCB85B6C6F4</key>
+		<key>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EEBC8ED064A916ECF2456ED29F063FCB85B6C6F4</string>
+	<string>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EEBC8ED064A916ECF2456ED29F063FCB85B6C6F4</string>
+			<string>F5FF7530787B4B4A9680518D3AEAB2C394E53E8E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>poopcircle</string>
 		</dict>

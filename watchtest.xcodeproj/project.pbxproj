@@ -16,6 +16,7 @@
 		86583BB81B9A961400696138 /* watchtestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583BB71B9A961400696138 /* watchtestTests.swift */; };
 		86583BC21B9AAD1E00696138 /* poopcircle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86583BC11B9AAD1E00696138 /* poopcircle.storyboard */; };
 		E9BCB9931B9B88BC0067678D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB9921B9B88BC0067678D /* SwiftyJSON.swift */; };
+		E9BCB9981B9BCBD30067678D /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB9971B9BCBD30067678D /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		914824A3610D3AB75C7BAA02 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F480A4D784D57C96BA0283 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E9BCB9921B9B88BC0067678D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E9BCB9971B9BCBD30067678D /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				86583BA11B9A961400696138 /* AppDelegate.swift */,
 				86583BA31B9A961400696138 /* ViewController.swift */,
 				86583BA51B9A961400696138 /* Main.storyboard */,
+				E9BCB9971B9BCBD30067678D /* RatingViewController.swift */,
 				86583BA81B9A961400696138 /* Images.xcassets */,
 				86583BAA1B9A961400696138 /* LaunchScreen.xib */,
 				86583B9F1B9A961400696138 /* Supporting Files */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9BCB9931B9B88BC0067678D /* SwiftyJSON.swift in Sources */,
+				E9BCB9981B9BCBD30067678D /* RatingViewController.swift in Sources */,
 				86583BA41B9A961400696138 /* ViewController.swift in Sources */,
 				86583BA21B9A961400696138 /* AppDelegate.swift in Sources */,
 			);
