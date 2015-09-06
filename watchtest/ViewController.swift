@@ -22,7 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func tButton (sender: UIButton!) {
         var ratingViewController: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("RatingView")
         
-        self.presentViewController(ratingViewController as UIViewController, animated: true, completion: nil)
+        self.presentViewController(ratingViewController as! UIViewController, animated: true, completion: nil)
         
         updateMap();
     }
